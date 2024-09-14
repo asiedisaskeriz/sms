@@ -4,7 +4,7 @@ import discord
 from time import sleep
 from sms import SendSms
 
-status = "dnd" #online/dnd/idle
+client.user.setStatus('dnd')
 
 usertoken = os.getenv("TOKEN")
 if not usertoken:
