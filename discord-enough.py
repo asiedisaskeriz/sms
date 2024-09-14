@@ -4,8 +4,6 @@ import discord
 from time import sleep
 from sms import SendSms
 
-client.user.setStatus('dnd')
-
 usertoken = os.getenv("TOKEN")
 if not usertoken:
   print("[ERROR] Please add a token inside Secrets.")
@@ -23,7 +21,8 @@ async def on_ready():
     print('{} Çalışmaya Başladı!'.format(client.user))
     activity = discord.Activity(type=discord.ActivityType.playing, name="Azer Bomber Tools 🕊️ | TJJuanZ")
     await client.change_presence(activity=activity)
-    
+    await client.change_presence(status=discord.Status.dnd)
+
 @client.event
 async def on_message(message):
     if message.author == client.user:
