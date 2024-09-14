@@ -4,6 +4,8 @@ import discord
 from time import sleep
 from sms import SendSms
 
+status = "dnd" #online/dnd/idle
+
 usertoken = os.getenv("TOKEN")
 if not usertoken:
   print("[ERROR] Please add a token inside Secrets.")
