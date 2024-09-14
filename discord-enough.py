@@ -6,8 +6,8 @@ from sms import SendSms
 
 usertoken = os.getenv("TOKEN")
 if not usertoken:
-  print("[ERROR] Please add a token inside Secrets.")
-  sys.exit()
+    print("[ERROR] Lütfen bir token ekleyin.")
+    sys.exit()
 
 gif = "https://media.tenor.com/SWiGXYOM8eMAAAAC/russia-soviet.gif"
 adet = 52
@@ -20,8 +20,7 @@ client = discord.Client(intents=intents)
 async def on_ready():
     print('{} Çalışmaya Başladı!'.format(client.user))
     activity = discord.Activity(type=discord.ActivityType.playing, name="Azer Bomber Tools 🕊️ | TJJuanZ")
-    await client.change_presence(activity=activity)
-    await client.change_presence(status=discord.Status.dnd)
+    await client.change_presence(activity=activity, status=discord.Status.dnd)  # Durumu 'dnd' olarak ayarla
 
 @client.event
 async def on_message(message):
@@ -31,7 +30,7 @@ async def on_message(message):
     if len(message.content.split(" ")) == 2 and message.content.split(" ")[0] == "*sms":
         if len(message.content.split(" ")[1]) == 10:
             telno = message.content.split(" ")[1]
-            embed=discord.Embed(title="SMS Bomber (+90)", description=(f"{adet} adet SMS Gönderiliyor --> {telno}\n{message.author.mention}"), color=0x001eff)
+            embed = discord.Embed(title="SMS Bomber (+90)", description=(f"{adet} adet SMS Gönderiliyor --> {telno}\n{message.author.mention}"), color=0x001eff)
             embed.set_thumbnail(url=gif)
             await message.channel.send(embed=embed)
             sms = SendSms(telno, "")
@@ -46,10 +45,10 @@ async def on_message(message):
                             sleep(saniye)
             await message.channel.send(telno+" --> "+str(sms.adet)+f" adet SMS gönderildi.\n{message.author.mention}")                        
         else:
-            await message.channel.send(f"Geçerli komut yazınız!\nYardım için ' *help ' yazınız.\n{message.author.mention}")
+            await message.channel.send(f"Geçerli komut yazınız!\nYardım için '*help' yazınız.\n{message.author.mention}")
     elif "*help" == message.content:
         await message.channel.send(f"Sms göndermek için komutu aşağıdaki gibi yazınız.\n```*sms 5051234567```\n*sms (telefon numarası)\n{message.author.mention}")
     else:
         pass
-  
+
 client.run(usertoken)
