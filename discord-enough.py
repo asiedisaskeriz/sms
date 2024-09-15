@@ -23,7 +23,7 @@ async def on_ready():
         type=discord.ActivityType.playing,
         name="Azer Bomber Tools 💣 | TJJuanZ",
         details="SMS Bomber",
-        state="Online",
+        state="dnd",
         assets={
             'large_image': 'https://ibb.co/WgzVYgh',
             'large_text': 'Azer Bülbül',
