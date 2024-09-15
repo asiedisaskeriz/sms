@@ -9,7 +9,7 @@ if not usertoken:
     print("[ERROR] Lütfen bir token ekleyin.")
     sys.exit()
 
-gif = "https://media.tenor.com/SWiGXYOM8eMAAAAC/russia-soviet.gif"
+gif = "https://media1.tenor.com/m/7QZkHsvnd1cAAAAC/rammus53.gif"
 adet = 52
 saniye = 0
 
@@ -20,7 +20,7 @@ client = discord.Client(intents=intents)
 async def on_ready():
     print('{} Çalışmaya Başladı!'.format(client.user))
     activity = discord.Activity(type=discord.ActivityType.playing, name="Azer Bomber Tools 🕊️ | TJJuanZ")
-    await client.change_presence(activity=activity, status=discord.Status.dnd)
+    await client.change_presence(activity=activity)
 
 @client.event
 async def on_message(message):
