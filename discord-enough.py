@@ -9,7 +9,7 @@ if not usertoken:
     print("[ERROR] Lütfen bir token ekleyin.")
     sys.exit()
 
-gif = "https://media1.tenor.com/m/7QZkHsvnd1cAAAAC/rammus53.gif"
+gif = "https://media1.tenor.com/m/7dp9JOjL6nYAAAAd/azer-b%C3%BClb%C3%BCl.gif"
 adet = 52
 saniye = 0
 
