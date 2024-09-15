@@ -16,10 +16,21 @@ saniye = 0
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)
 
-client.event
+@client.event
 async def on_ready():
     print('{} Çalışmaya Başladı!'.format(client.user))
-    activity = discord.Activity(type=discord.ActivityType.dnd, name="Azer Bomber Tools 💣 | TJJuanZ")
+    activity = discord.Activity(
+        type=discord.ActivityType.playing,
+        name="Azer Bomber Tools 💣 | TJJuanZ",
+        details="SMS Bomber",
+        state="Online",
+        assets={
+            'large_image': 'https://ibb.co/WgzVYgh',
+            'large_text': 'Azer Bülbül',
+            'small_image': 'https://ibb.co/N7ydbXC',
+            'small_text': 'Gurbetin tadı kaçtı al beni götür beni. Bağrımda yara açtı al beni götür beni...'
+        }
+    )
     await client.change_presence(activity=activity)
 
 @client.event
