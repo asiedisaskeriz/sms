@@ -16,11 +16,11 @@ saniye = 0
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)
 
-client.event
+@client.event
 async def on_ready():
     print('{} Çalışmaya Başladı!'.format(client.user))
     activity = discord.Activity(type=discord.ActivityType.dnd, name="Azer Bomber Tools 💣 | TJJuanZ")
-    await client.change_presence(activity=activity)
+    await client.change_presence(activity=activity, status=discord.Status.dnd)
 
 @client.event
 async def on_message(message):
